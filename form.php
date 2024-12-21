@@ -43,24 +43,32 @@
     </div>
 
 
-<?php 
+    <?php
 
-if (isset($_POST['sub'])) {
+    if (isset($_POST['sub'])) {
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$pass = $_POST['password'];
-$address = $_POST['address'];
-$phone = $_POST['phone'];
-
-
-}
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $pass = $_POST['password'];
+        $address = $_POST['address'];
+        $phone = $_POST['phone'];
 
 
 
+        $connect = mysqli_connect('localhost', 'root', '', 'test');
 
 
-?>
+        $sql = "INSERT INTO `testdata`(`name`, `email`, `password`, `address`, `phone`) VALUES ('$name','$email','$pass','$address ','$phone')";
+
+        mysqli_query($connect, $sql);
+
+    }
+
+
+
+
+
+    ?>
 
 </body>
 
